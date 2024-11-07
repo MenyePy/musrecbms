@@ -8,7 +8,10 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors(
+  origin: 'https://musrecbmsapi.vercel.app', // specify allowed origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 app.use(express.json());
 
 app.use('/uploads', express.static('uploads'));
