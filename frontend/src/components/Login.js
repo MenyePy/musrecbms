@@ -17,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('https://musrecbmsapi.vercel.app/api/auth/login', formData);
+      const res = await axios.post(`${process.env.BACKEND_URL}/api/auth/login`, formData);
       localStorage.setItem('token', res.data.token);
       const profileRes = await axios.get('http://localhost:5000/api/auth/profile', {
         headers: { Authorization: `Bearer ${res.data.token}` }
@@ -33,7 +33,7 @@ const Login = () => {
     const email = prompt('Enter your email address for password reset:');
     if (email) {
       try {
-        await axios.post('https://musrecbmsapi.vercel.app/api/auth/forgot-password', { email });
+        await axios.post(`${process.env.BACKEND_URL}/api/auth/forgot-password`, { email });
         toast.success('Password reset email sent');
       } catch (error) {
         handleError(error.response?.data?.message || 'Error sending password reset email');
