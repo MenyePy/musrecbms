@@ -13,7 +13,7 @@ const ManageSupportUsers = () => {
   const fetchSupportUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/auth/support-users', {
+      const response = await axios.get('https://musrecbmsapi.vercel.app/api/auth/support-users', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setSupportUsers(response.data);
@@ -29,7 +29,7 @@ const ManageSupportUsers = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        `http://localhost:5000/api/auth/deactivate-support/${userId}`,
+        `https://musrecbmsapi.vercel.app/api/auth/deactivate-support/${userId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` }}
       );
