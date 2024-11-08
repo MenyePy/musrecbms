@@ -32,7 +32,7 @@ const UserReportList = ({ userRole }) => {
         '/api/user-reports/my-reports';
       
       const response = await axios.get(
-        `http://localhost:5000${endpoint}`,
+        `https://musrecbmsapi.vercel.app${endpoint}`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -56,7 +56,7 @@ const UserReportList = ({ userRole }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/user-reports/${reportId}/status`,
+        `https://musrecbmsapi.vercel.app/api/user-reports/${reportId}/status`,
         { 
           status: userReports.find(r => r._id === reportId).status,
           comment: comments[reportId]
@@ -76,7 +76,7 @@ const UserReportList = ({ userRole }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/user-reports/${reportId}/status`,
+        `https://musrecbmsapi.vercel.app/api/user-reports/${reportId}/status`,
         { 
           status, 
           comment: comments[reportId]

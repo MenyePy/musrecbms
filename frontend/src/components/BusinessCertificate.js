@@ -12,7 +12,7 @@ const BusinessCertificate = () => {
     });
 
     // Load the PNG as a background
-    const imagePath = '/path/to/Blue Minimalist Certificate Of Achievement.png'; // Replace with the correct path if needed
+    const imagePath = './Blue Minimalist Certificate Of Achievement.png'; // Replace with the correct path if needed
     const imageWidth = 2000; // Set the width of the image (should match the format above)
     const imageHeight = 1414; // Set the height of the image (should match the format above)
 

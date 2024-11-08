@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
     const token = localStorage.getItem('token');
     if (token) {
       // Fetch user profile
-      fetch('http://localhost:5000/api/auth/profile', {
+      fetch('https://musrecbmsapi.vercel.app/api/auth/profile', {
         headers: {
           Authorization: `Bearer ${token}`
         }

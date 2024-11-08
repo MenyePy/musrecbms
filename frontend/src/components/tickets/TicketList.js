@@ -22,7 +22,7 @@ const TicketList = ({ userRole }) => {
         '/api/tickets/my-tickets';
       
       const response = await axios.get(
-        `http://localhost:5000${endpoint}`,
+        `https://musrecbmsapi.vercel.app${endpoint}`,
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -39,7 +39,7 @@ const TicketList = ({ userRole }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/tickets/${ticketId}/status`,
+        `https://musrecbmsapi.vercel.app/api/tickets/${ticketId}/status`,
         { status, comment },
         {
           headers: { Authorization: `Bearer ${token}` }
@@ -55,7 +55,7 @@ const TicketList = ({ userRole }) => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/tickets/${ticketId}/assign`,
+        `https://musrecbmsapi.vercel.app/api/tickets/${ticketId}/assign`,
         {},
         {
           headers: { Authorization: `Bearer ${token}` }

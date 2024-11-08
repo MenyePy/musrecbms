@@ -15,7 +15,7 @@ const UnpaidBusinesses = () => {
   const fetchUnpaidBusinesses = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/revenue/unpaid-businesses', {
+      const response = await axios.get('https://musrecbmsapi.vercel.app/api/revenue/unpaid-businesses', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setBusinesses(response.data);

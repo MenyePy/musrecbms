@@ -22,7 +22,7 @@ const AdminDashboard = () => {
   const fetchAvailableLocations = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/locations/', {
+      const response = await axios.get('https://musrecbmsapi.vercel.app/api/locations/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setAvailableLocations(response.data.filter(location => location.available).length);
@@ -40,11 +40,11 @@ const AdminDashboard = () => {
 
       // Fetch all required data in parallel
       const [businessesRes, ticketsRes, usersRes, revenueRes, unpaidRes] = await Promise.all([
-        axios.get('http://localhost:5000/api/business/applications', { headers }),
-        axios.get('http://localhost:5000/api/tickets/unanswered-count', { headers }),
-        axios.get('http://localhost:5000/api/auth/support-users', { headers }),
-        axios.get('http://localhost:5000/api/revenue/total-revenue', { headers }),
-        axios.get('http://localhost:5000/api/revenue/unpaid-businesses', { headers })
+        axios.get('https://musrecbmsapi.vercel.app/api/business/applications', { headers }),
+        axios.get('https://musrecbmsapi.vercel.app/api/tickets/unanswered-count', { headers }),
+        axios.get('https://musrecbmsapi.vercel.app/api/auth/support-users', { headers }),
+        axios.get('https://musrecbmsapi.vercel.app/api/revenue/total-revenue', { headers }),
+        axios.get('https://musrecbmsapi.vercel.app/api/revenue/unpaid-businesses', { headers })
       ]);
 
       // Set pending applications count

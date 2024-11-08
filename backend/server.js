@@ -6,13 +6,15 @@ const emailService = require('./services/EmailService');
 require('dotenv').config();
 
 const app = express();
-
-// Middleware
-app.use(cors(
+const corsOptions = {
   origin: 'https://musrecbmsapi.vercel.app', // specify allowed origin
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin'],
   credentials: true,
+};
+
+// Middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/uploads', express.static('uploads'));
@@ -32,13 +34,13 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/business', require('./routes/business'));
 
-if(process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/build")));
+// if(process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
-  })
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
+//   })
+// }
 
 emailService.scheduleNotifications();
 

@@ -25,7 +25,7 @@ export const PaymentSuccess = () => {
 
         const token = localStorage.getItem('token');
         const response = await axios.get(
-          `http://localhost:5000/api/payments/check-status/${businessId}/${orderRef}`,
+          `https://musrecbmsapi.vercel.app/api/payments/check-status/${businessId}/${orderRef}`,
           { headers: { Authorization: `Bearer ${token}` }}
         );
 

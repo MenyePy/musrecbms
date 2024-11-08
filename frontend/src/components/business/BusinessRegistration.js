@@ -44,7 +44,7 @@ const BusinessRegistration = () => {
       formDataToSend.append('justificationLetter', formData.justificationLetter);
       formDataToSend.append('file', formData.file);
 
-      await axios.post('http://localhost:5000/api/business/register', formDataToSend, {
+      await axios.post('https://musrecbmsapi.vercel.app/api/business/register', formDataToSend, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'

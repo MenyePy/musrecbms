@@ -15,7 +15,7 @@ const RevenueDashboard = () => {
   const fetchRevenueData = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/revenue/total-revenue', {
+      const response = await axios.get('https://musrecbmsapi.vercel.app/api/revenue/total-revenue', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setRevenueData(response.data);

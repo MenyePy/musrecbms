@@ -44,7 +44,7 @@ const ManageSupportUsers = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `http://localhost:5000/api/auth/reactivate-support/${userId}`,
+        `https://musrecbmsapi.vercel.app/api/auth/reactivate-support/${userId}`,
         {},
         { headers: { Authorization: `Bearer ${token}` }}
       );

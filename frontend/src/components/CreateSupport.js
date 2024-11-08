@@ -16,7 +16,7 @@ const CreateSupport = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/auth/create-support',
+        'https://musrecbmsapi.vercel.app/api/auth/create-support',
         formData,
         {
           headers: { Authorization: `Bearer ${token}` }

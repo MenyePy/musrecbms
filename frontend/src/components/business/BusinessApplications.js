@@ -40,7 +40,7 @@ const BusinessApplications = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        'http://localhost:5000/api/business/applications',
+        'https://musrecbmsapi.vercel.app/api/business/applications',
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -104,7 +104,7 @@ const BusinessApplications = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/business/applications/${applicationId}/status`,
+        `https://musrecbmsapi.vercel.app/api/business/applications/${applicationId}/status`,
         {
           status: applications.find(app => app._id === applicationId).status,
           adminFeedback: adminFeedbacks[applicationId]
@@ -138,7 +138,7 @@ const BusinessApplications = () => {
       }
 
       await axios.put(
-        `http://localhost:5000/api/business/applications/${id}/status`,
+        `https://musrecbmsapi.vercel.app/api/business/applications/${id}/status`,
         payload,
         {
           headers: { Authorization: `Bearer ${token}` }

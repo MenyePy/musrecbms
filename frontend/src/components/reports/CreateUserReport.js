@@ -23,7 +23,7 @@ const CreateUserReport = () => {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/api/auth/users', {
+        const response = await axios.get('https://musrecbmsapi.vercel.app/api/auth/users', {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUsers(response.data);
@@ -50,7 +50,7 @@ const CreateUserReport = () => {
       });
 
       await axios.post(
-        'http://localhost:5000/api/user-reports',
+        'https://musrecbmsapi.vercel.app/api/user-reports',
         form,
         {
           headers: {

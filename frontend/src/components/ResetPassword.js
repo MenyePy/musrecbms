@@ -16,7 +16,7 @@ const ResetPassword = () => {
       return;
     }
     try {
-      await axios.post(`http://localhost:5000/api/auth/reset-password/${token}`, { newPassword: password });
+      await axios.post(`https://musrecbmsapi.vercel.app/api/auth/reset-password/${token}`, { newPassword: password });
       toast.success('Password reset successful');
       setTimeout(() => navigate('/login'), 2000);
     } catch (error) {

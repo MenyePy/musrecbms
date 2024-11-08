@@ -17,7 +17,7 @@ const LocationManagement = () => {
     try {
       setError(null);
       const token = localStorage.getItem('token');
-      const response = await axios.get('http://localhost:5000/api/locations/', {
+      const response = await axios.get('https://musrecbmsapi.vercel.app/api/locations/', {
         headers: { Authorization: `Bearer ${token}` }
       });
       setLocations(response.data);
@@ -38,7 +38,7 @@ const LocationManagement = () => {
       setIsSubmitting(true);
       const token = localStorage.getItem('token');
       await axios.post(
-        'http://localhost:5000/api/locations/new',
+        'https://musrecbmsapi.vercel.app/api/locations/new',
         { name: newLocation.trim() },
         { headers: { Authorization: `Bearer ${token}` }}
       );

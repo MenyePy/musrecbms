@@ -27,7 +27,7 @@ const UserDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.get(
-        'http://localhost:5000/api/business/my-application',
+        'https://musrecbmsapi.vercel.app/api/business/my-application',
         {
           headers: { Authorization: `Bearer ${token}` }
         }
@@ -52,7 +52,7 @@ const UserDashboard = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        `http://localhost:5000/api/business/edit/${application._id}`,
+        `https://musrecbmsapi.vercel.app/api/business/edit/${application._id}`,
         editForm,
         {
           headers: { Authorization: `Bearer ${token}` }

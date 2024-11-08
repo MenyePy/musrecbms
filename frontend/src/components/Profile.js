@@ -23,7 +23,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       const response = await axios.put(
-        'http://localhost:5000/api/auth/profile/username',
+        'https://musrecbmsapi.vercel.app/api/auth/profile/username',
         { username },
         { headers: { Authorization: `Bearer ${token}` } }
       );
