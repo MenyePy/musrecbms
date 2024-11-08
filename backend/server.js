@@ -34,6 +34,10 @@ mongoose.connect(process.env.MONGODB_URI)
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/business', require('./routes/business'));
 
+app.get("/", (req, res) => {
+  res.json("MUSREC Business Management System Backend (API)");
+});
+
 // if(process.env.NODE_ENV === "production") {
 //   app.use(express.static(path.join(__dirname, "/frontend/build")));
 
