@@ -121,7 +121,7 @@ const TicketList = ({ userRole }) => {
                   {ticket.attachments.map((attachment, index) => (
                     <a
                       key={index}
-                      href={`http://localhost:5000/${attachment.path}`}
+                      href={`https://musrecbmsapi.vercel.app/${attachment.path}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-blue-500 hover:underline"

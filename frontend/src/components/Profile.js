@@ -46,7 +46,7 @@ const Profile = () => {
     try {
       const token = localStorage.getItem('token');
       await axios.put(
-        'http://localhost:5000/api/auth/profile/password',
+        'https://musrecbmsapi.vercel.app/api/auth/profile/password',
         {
           currentPassword: passwordData.currentPassword,
           newPassword: passwordData.newPassword

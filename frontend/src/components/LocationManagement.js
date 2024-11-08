@@ -62,7 +62,7 @@ const LocationManagement = () => {
     try {
       setError(null);
       const token = localStorage.getItem('token');
-      await axios.delete(`http://localhost:5000/api/locations/${locationId}`, {
+      await axios.delete(`https://musrecbmsapi.vercel.app/api/locations/${locationId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchLocations();

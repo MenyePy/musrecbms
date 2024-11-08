@@ -29,7 +29,7 @@ const CreateTicket = () => {
       });
 
       await axios.post(
-        'http://localhost:5000/api/tickets',
+        'https://musrecbmsapi.vercel.app/api/tickets',
         form,
         {
           headers: {

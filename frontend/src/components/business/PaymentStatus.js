@@ -16,13 +16,13 @@ const PaymentStatus = ({ businessId }) => {
       const token = localStorage.getItem('token');
       const [paymentResponse, businessResponse] = await Promise.all([
         axios.get(
-          `http://localhost:5000/api/payments/status/${businessId}`,
+          `https://musrecbmsapi.vercel.app/api/payments/status/${businessId}`,
           {
             headers: { Authorization: `Bearer ${token}` }
           }
         ),
         axios.get(
-          `http://localhost:5000/api/business/my-application`,
+          `https://musrecbmsapi.vercel.app/api/business/my-application`,
           {
             headers: { Authorization: `Bearer ${token}` }
           }
@@ -52,7 +52,7 @@ const PaymentStatus = ({ businessId }) => {
       setProcessingPayment(true);
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `http://localhost:5000/api/payments/${type}/${businessId}`,
+        `https://musrecbmsapi.vercel.app/api/payments/${type}/${businessId}`,
         { paymentMethod: 'card' },
         { headers: { Authorization: `Bearer ${token}` }}
       );
@@ -77,7 +77,7 @@ const PaymentStatus = ({ businessId }) => {
       setProcessingPayment(true);
       const token = localStorage.getItem('token');
       const response = await axios.post(
-        `http://localhost:5000/api/payments/mobile/${type}/${businessId}`,
+        `https://musrecbmsapi.vercel.app/api/payments/mobile/${type}/${businessId}`,
         { 
           paymentMethod: 'mobile',
           phoneNumber 
@@ -106,7 +106,7 @@ const PaymentStatus = ({ businessId }) => {
       try {
         const token = localStorage.getItem('token');
         const response = await axios.get(
-          `http://localhost:5000/api/payments/check-status/mobile/${businessId}/${orderRef}`,
+          `https://musrecbmsapi.vercel.app/api/payments/check-status/mobile/${businessId}/${orderRef}`,
           { headers: { Authorization: `Bearer ${token}` }}
         );
         console.log(response);

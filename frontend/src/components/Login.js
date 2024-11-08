@@ -19,7 +19,7 @@ const Login = () => {
     try {
       const res = await axios.post(`https://musrecbmsapi.vercel.app/api/auth/login`, formData);
       localStorage.setItem('token', res.data.token);
-      const profileRes = await axios.get('http://localhost:5000/api/auth/profile', {
+      const profileRes = await axios.get('https://musrecbmsapi.vercel.app/api/auth/profile', {
         headers: { Authorization: `Bearer ${res.data.token}` }
       });
       setUser(profileRes.data);
