@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {authMiddleware} = require('../middleware/auth');
-const Notification = require('../models/notification');
+const Notification = require('../models/Notification');
 const webpush = require('web-push');
 const User = require('../models/User');
 require('dotenv').config();
