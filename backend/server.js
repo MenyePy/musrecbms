@@ -7,7 +7,7 @@ require('dotenv').config();
 
 const app = express();
 const corsOptions = {
-  origin: ['https://musrecbms.vercel.app', 'http://192.168.5.170'], // specify allowed origin
+  origin: ['https://musrecbms.vercel.app', 'http://192.168.5.170:3000'], // specify allowed origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin'],
   credentials: true,
