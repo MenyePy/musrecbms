@@ -9,6 +9,7 @@ const app = express();
 const corsOptions = {
   origin: ['https://musrecbms.vercel.app'], // specify allowed origin
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'HEAD', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Accept', 'Origin'],
   credentials: true,
 };
 
